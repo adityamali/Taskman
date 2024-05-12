@@ -17,8 +17,10 @@
 		41EF87AC2BEF9884002EB7A7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF87AB2BEF9884002EB7A7 /* Task.swift */; };
 		41EF87AE2BEFE998002EB7A7 /* TaskGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF87AD2BEFE998002EB7A7 /* TaskGroup.swift */; };
 		41EF87B02BEFEC2F002EB7A7 /* TaskSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF87AF2BEFEC2F002EB7A7 /* TaskSection.swift */; };
-		41EF87B42BEFF22A002EB7A7 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF87B32BEFF22A002EB7A7 /* TaskListView.swift */; };
+		41EF87B42BEFF22A002EB7A7 /* StaticTaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF87B32BEFF22A002EB7A7 /* StaticTaskListView.swift */; };
 		41EF87B82BF00915002EB7A7 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF87B72BF00915002EB7A7 /* SidebarView.swift */; };
+		41EF87BA2BF07E77002EB7A7 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF87B92BF07E77002EB7A7 /* TaskListView.swift */; };
+		41EF87BC2BF080CE002EB7A7 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF87BB2BF080CE002EB7A7 /* TaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +55,10 @@
 		41EF87AB2BEF9884002EB7A7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		41EF87AD2BEFE998002EB7A7 /* TaskGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroup.swift; sourceTree = "<group>"; };
 		41EF87AF2BEFEC2F002EB7A7 /* TaskSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSection.swift; sourceTree = "<group>"; };
-		41EF87B32BEFF22A002EB7A7 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		41EF87B32BEFF22A002EB7A7 /* StaticTaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTaskListView.swift; sourceTree = "<group>"; };
 		41EF87B72BF00915002EB7A7 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		41EF87B92BF07E77002EB7A7 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		41EF87BB2BF080CE002EB7A7 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,9 @@
 				41EF87832BEF97B4002EB7A7 /* Assets.xcassets */,
 				41EF87882BEF97B4002EB7A7 /* taskman.entitlements */,
 				41EF87852BEF97B4002EB7A7 /* Preview Content */,
-				41EF87B32BEFF22A002EB7A7 /* TaskListView.swift */,
+				41EF87B32BEFF22A002EB7A7 /* StaticTaskListView.swift */,
+				41EF87B92BF07E77002EB7A7 /* TaskListView.swift */,
+				41EF87BB2BF080CE002EB7A7 /* TaskView.swift */,
 				41EF87B72BF00915002EB7A7 /* SidebarView.swift */,
 			);
 			path = taskman;
@@ -282,13 +288,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41EF87B42BEFF22A002EB7A7 /* TaskListView.swift in Sources */,
+				41EF87BC2BF080CE002EB7A7 /* TaskView.swift in Sources */,
+				41EF87B42BEFF22A002EB7A7 /* StaticTaskListView.swift in Sources */,
 				41EF87B82BF00915002EB7A7 /* SidebarView.swift in Sources */,
 				41EF87822BEF97B2002EB7A7 /* ContentView.swift in Sources */,
 				41EF87AC2BEF9884002EB7A7 /* Task.swift in Sources */,
 				41EF87B02BEFEC2F002EB7A7 /* TaskSection.swift in Sources */,
 				41EF87AE2BEFE998002EB7A7 /* TaskGroup.swift in Sources */,
 				41EF87802BEF97B2002EB7A7 /* taskmanApp.swift in Sources */,
+				41EF87BA2BF07E77002EB7A7 /* TaskListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +463,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"taskman/Preview Content\"";
 				DEVELOPMENT_TEAM = LNV3W5XCQ6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -465,8 +474,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theadityamali.taskman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -482,6 +494,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"taskman/Preview Content\"";
 				DEVELOPMENT_TEAM = LNV3W5XCQ6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -492,8 +505,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theadityamali.taskman;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

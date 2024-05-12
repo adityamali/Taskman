@@ -23,7 +23,7 @@ struct Task: Identifiable, Hashable{
     }
     
     static func example() -> Task{
-        Task(title: "Buy milk", dueDate: Calendar.current.date(byAdding: .day, value: 2, to: Date())!)
+        Task(title: "Buy milk", isComplete: true , dueDate: Calendar.current.date(byAdding: .day, value: 2, to: Date())!)
     }
     
     static func examples()-> [Task]{

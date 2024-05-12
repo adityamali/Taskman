@@ -10,7 +10,7 @@ import SwiftUI
 struct SidebarView: View {
     
     @Binding var userCreatedGroups: [TaskGroup]
-    @Binding var selection: TaskSection
+    @Binding var selection: TaskSection?
     
     var body: some View {
         List(selection: $selection){
@@ -25,6 +25,13 @@ struct SidebarView: View {
                         TextField("New Group", text: $group.title)
                     }
                         .tag(TaskSection.list(group))
+                        .contextMenu{
+                            Button("Delete", role: .destructive){
+                                if let index = userCreatedGroups.firstIndex(where: {$0.id == group.id}){
+                                    userCreatedGroups.remove(at: index)
+                                }
+                            }
+                        }
                 }
             }
         }
@@ -38,6 +45,7 @@ struct SidebarView: View {
             .buttonStyle(.borderless)
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
+            .keyboardShortcut(KeyEquivalent("a"), modifiers: .command)
         }
     }
 }
